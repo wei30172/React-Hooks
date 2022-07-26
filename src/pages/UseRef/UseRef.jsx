@@ -93,6 +93,7 @@ const UseRef = () => {
         <button className="btn" onClick={focusOnInput}>
           Focus
         </button>
+        <br />
 
         <h2>Timer</h2>
         <h3>Seconds: {seconds}</h3>
