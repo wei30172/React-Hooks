@@ -1,0 +1,74 @@
+@use "../abstracts/colors" as *;
+
+body, * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+  *:focus {
+    outline: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+ul{
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_flex {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 100%;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 0.5rem;
+  display: block;
+  text-align: center;
+  transition: all 0.5s;
+  padding: 0.5rem 0;
+  margin: 0.5rem auto;
+  cursor: pointer;
+  background-color: $primary;
+  color: $white;
+  &:hover{
+    color: $text-primary;
+  }
+}
+
+.light {
+  background-color: $dark-100;
+  color: $dark-900;
+}
+
+.dark {
+  background-color: $dark-700;
+  color: $white;
+}
