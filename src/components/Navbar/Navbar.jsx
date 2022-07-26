@@ -37,6 +37,8 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      {/* switch mode */}
+      <SwitchMode />
       <div className="flex">
         {/* pc menu */}
         <div className="navbar_menu">
@@ -60,9 +62,13 @@ const Navbar = () => {
           className="navbar_hamburger"
         >
           {!showMobMenu ? (
-            <div className="cursor-pointer">✖</div>
+            <button className="cursor-pointer">
+              <h1>☰</h1>
+            </button>
           ) : (
-            <div className="cursor-pointer">☰</div>
+            <button className="cursor-pointer">
+              <h1>✖</h1>
+            </button>
           )}
         </div>
 
@@ -79,9 +85,6 @@ const Navbar = () => {
               </li>
             ))}
         </ul>
-
-        {/* switch mode */}
-        <SwitchMode />
       </div>
     </div>
   );

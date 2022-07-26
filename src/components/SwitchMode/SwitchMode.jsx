@@ -8,7 +8,11 @@ const SwitchMode = () => {
     setDarkMode((darkMode) => !darkMode);
   };
 
-  return <h2 onClick={handleDarkModeToggle}>◑</h2>;
+  return (
+    <button onClick={handleDarkModeToggle}>
+      <h1>◑</h1>
+    </button>
+  );
 };
 
 export default SwitchMode;

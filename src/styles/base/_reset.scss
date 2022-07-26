@@ -31,6 +31,9 @@ input {
   font-size: 1rem;
 }
 
+button {
+  background-color: transparent;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -60,8 +63,8 @@ input {
   display: block;
   text-align: center;
   transition: all 0.5s;
-  padding: 0.5rem 0;
-  margin: 0.5rem auto;
+  padding: 0.5rem;
+  margin: 0.5rem;
   cursor: pointer;
   background-color: $primary;
   color: $white;
