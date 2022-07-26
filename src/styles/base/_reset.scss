@@ -24,6 +24,13 @@ table {
   border-spacing: 0;
 }
 
+input {
+  padding: 1rem;
+  background-color: $white;
+  border: 1px solid $primary;
+  font-size: 1rem;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -35,7 +42,7 @@ table {
   align-items: center;
 }
 
-.page_flex {
+.page-flex {
   width: 100vw;
   height: 100vh;
   display: flex;
