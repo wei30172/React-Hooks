@@ -1,5 +1,5 @@
 /*
-一、useCallback重要概念: Referential Equality
+一、useCallback重要概念
 (一)什麼是Referential Equality?
 123 === 123 // true
 "React" === "React" // true
@@ -14,7 +14,7 @@ const react1 = ff()
 const react2 = ff()
 react1 === react2 // false
 when React re-renders a component it recreates these functions. (does not have referential equality)
-當 React 重新渲染組件時，會重新創建這些函數，即使他們看起來一樣且來源一致(因不符合ferential equality)。
+當 React 重新渲染組件時，會重新創建這些函數(因不符合referential equality)，即使他們看起來一樣。
 useCallback return a definition of a memorized function.
 useCallback返回一個memoized function的定義。
 
