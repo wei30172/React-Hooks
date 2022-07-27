@@ -1,7 +1,7 @@
 import React from "react";
 
 const Memo = () => {
-  return <div className="page-flex">To be continued...</div>;
+  return <main className="page-flex">To be continued...</main>;
 };
 
 export default Memo;

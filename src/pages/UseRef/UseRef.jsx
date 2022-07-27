@@ -71,8 +71,8 @@ const UseRef = () => {
   // },[])
 
   return (
-    <div className="page-flex">
-      <div>
+    <main className="page-flex">
+      <section>
         <h1>UseRef</h1>
         <h2>Renders: {renderCounts.current}</h2>
         <br />
@@ -108,8 +108,8 @@ const UseRef = () => {
             Reset
           </button>
         </section>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
