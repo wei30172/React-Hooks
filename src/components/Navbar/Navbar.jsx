@@ -15,6 +15,11 @@ const menuItems = [
     link: "useRef",
   },
   {
+    id: "useCallback",
+    name: "UseCallback",
+    link: "useCallback",
+  },
+  {
     id: "useMemo",
     name: "UseMemo",
     link: "useMemo",
@@ -23,11 +28,6 @@ const menuItems = [
     id: "memo",
     name: "Memo",
     link: "memo",
-  },
-  {
-    id: "useCallback",
-    name: "UseCallback",
-    link: "useCallback",
   },
 ];
 

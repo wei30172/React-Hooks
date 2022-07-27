@@ -9,7 +9,7 @@ const SwitchMode = () => {
   };
 
   return (
-    <button onClick={handleDarkModeToggle}>
+    <button onClick={handleDarkModeToggle} className="cursor-pointer">
       <h1>◑</h1>
     </button>
   );
