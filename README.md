@@ -2,7 +2,7 @@
 
 A simple website showing examples and notes of React Hooks
 
-## Medium
+## Medium publication
 https://medium.com/@wei30172
 
 ## Topics
