@@ -2,7 +2,8 @@
 
 A simple website showing examples and notes of React Hooks
 
-## Project Screenshots
+## Medium
+https://medium.com/@wei30172
 
 ## Topics
 useRef, useCallback, React.memo, useMmemo
