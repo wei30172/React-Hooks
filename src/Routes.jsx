@@ -7,9 +7,9 @@ const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/useRef" element={<UseRef />} />
-      <Route path="/useMemo" element={<UseMemo />} />
-      <Route path="/memo" element={<Memo />} />
       <Route path="/useCallback" element={<UseCallback />} />
+      <Route path="/memo" element={<Memo />} />
+      <Route path="/useMemo" element={<UseMemo />} />
       <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
   );

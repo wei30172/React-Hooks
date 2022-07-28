@@ -1,0 +1,25 @@
+@use "../../styles/abstracts/colors" as *;
+
+form {
+  padding: 1rem;
+  border: 1px solid $text-primary;
+  margin-bottom: 1rem;
+  .new-todo {
+    width: 100%;
+    padding-right: 1rem;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 0.5px solid $text-primary;
+  }
+  .submit {
+    background-color: $white;
+    color: $background-light;
+    &:focus, &:hover {
+      background-color: $success-primary;
+      color: $white;
+    }
+  }
+}

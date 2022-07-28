@@ -20,14 +20,14 @@ const menuItems = [
     link: "useCallback",
   },
   {
+    id: "memo",
+    name: "React.Memo",
+    link: "memo",
+  },
+  {
     id: "useMemo",
     name: "UseMemo",
     link: "useMemo",
-  },
-  {
-    id: "memo",
-    name: "Memo",
-    link: "memo",
   },
 ];
 

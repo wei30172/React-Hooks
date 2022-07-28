@@ -1,0 +1,30 @@
+@use "../../styles/abstracts/colors" as *;
+
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  input[type="checkbox"] {
+    min-width: 30px;
+    min-height: 30px;
+    margin-right: 1rem;
+  }
+  label {
+    width: 100%;
+    text-align: left;
+  }
+  button {
+    min-width: 50px;
+    min-height: 50px;
+    border: 1px solid $text-primary;
+    border-radius: 10%;
+    margin: .1rem;
+    &.delete {
+      background-color: $white;
+      color: $danger-primary;
+      &:focus, &:hover {
+        background-color: $danger-background;
+      }
+    }
+  }
+}
