@@ -1,7 +1,8 @@
 /*
 一、React.memo重要概念
-useMemo memorizes the result of an expensive calculation. useMemo 記住計算結果，不需要在每次渲染時都重複執行獲得一樣的結果。
+React.memo與useMemo
 React.memo memorizes components. React.memo 記憶組件。
+useMemo memorizes the result of an expensive calculation. useMemo 記住計算結果，不需要在每次渲染時都重複執行獲得一樣的結果。
 
 React.memo returns a new component after it wraps the component it received.
 React.memo 在收到组件后返回一个新组件。

@@ -34,7 +34,7 @@ const UseCallback = () => {
   const [num2] = useState(5);
 
   // const sum = () => num1 + num2;
-  // 在變動state觸發組件re-render時，創造了新的sum function，引發useEffect的運行(sum變動)，執行log。
+  // 在變動state觸發組件re-render時，創造了新的sum function，引發useEffect的運行(因sum變動)，執行log。
 
   const sum = useCallback(() => num1 + num2, [num1, num2]);
   // 將num1, num2置於dependency array
@@ -48,7 +48,7 @@ const UseCallback = () => {
   }, [sum]);
 
   // const buildArray = () => [num1, num2];
-  // 在變動state觸發組件re-render時，創造了新的buildArray function，引發useEffect的運行(buildArray變動)，執行log。
+  // 在變動state觸發組件re-render時，創造了新的buildArray function，引發useEffect的運行(因buildArray變動)，執行log。
 
   const buildArray = useCallback(() => [num1, num2], [num1, num2]);
   // 將num1, num2置於dependency array
