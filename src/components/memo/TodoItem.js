@@ -1,34 +1,7 @@
 import React from "react";
-import { todosApi } from "../../api/todosApi";
 import "./TodoItem.scss";
 
-const TodoItem = ({ todo, todos, setTodos }) => {
-  const updateTodo = async (todo) => {
-    await todosApi
-      .patch(`/${todo.id}`, todo)
-      .then(({ data }) => {
-        const updatedUsers = todos.map((item) => {
-          if (item.id === todo.id) item = data;
-          return item;
-        });
-        setTodos(updatedUsers);
-      })
-      .catch((error) => console.log(error));
-  };
-
-  const deleteTodo = async ({ id }) => {
-    await todosApi
-      .delete(`/${id}`, id)
-      .then(
-        setTodos(
-          todos.filter((todo) => {
-            return todo.id !== id;
-          }),
-        ),
-      )
-      .catch((error) => console.log(error));
-  };
-
+const TodoItem = ({ todo, updateTodo, deleteTodo }) => {
   return (
     <article>
       <div className="todo">

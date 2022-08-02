@@ -14,10 +14,40 @@ const TodoList = () => {
       .catch((error) => console.log(error));
   };
 
-  const addTodo = async (todo) => {
+  const addTodo = async (newTodo) => {
     await todosApi
-      .post("/", todo)
-      .then(({ data }) => setTodos((todos) => [data, ...todos]))
+      .post("/", newTodo)
+      .then(() => {
+        setTodos((todos) => [newTodo, ...todos])
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const updateTodo = async (todo) => {
+    await todosApi
+      .patch(`/${todo.id}`, todo)
+      .then(() => {
+        const updatedUsers = todos.map((item) => {
+          if (item.id === todo.id) {
+            item = todo;
+          };
+          return item;
+        });
+        setTodos(updatedUsers);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const deleteTodo = async ({ id }) => {
+    await todosApi
+      .delete(`/${id}`, id)
+      .then(
+        setTodos(
+          todos.filter((todo) => {
+            return todo.id !== id;
+          }),
+        ),
+      )
       .catch((error) => console.log(error));
   };
 
@@ -27,8 +57,12 @@ const TodoList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo({ userId: 1, title: newTodo, completed: false });
-    console.log(newTodo);
+    addTodo({
+      userId: 1,
+      id: Math.floor(Math.random() * (1000 - 201) + 201),
+      title: newTodo,
+      completed: false
+    });
     setNewTodo("");
   };
 
@@ -55,8 +89,8 @@ const TodoList = () => {
         todos.map((todo) => (
           <TodoItem
             key={todo.id}
-            setTodos={setTodos}
-            todos={todos}
+            updateTodo={updateTodo}
+            deleteTodo={deleteTodo}
             todo={todo}
           />
         ))}
