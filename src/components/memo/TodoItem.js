@@ -23,4 +23,13 @@ const TodoItem = ({ todo, updateTodo, deleteTodo }) => {
   );
 };
 
-export default TodoItem;
+const areEqual = (prevProps, nextProps) => {
+  return (
+    prevProps.todo.id === nextProps.todo.id &&
+    prevProps.todo.completed === nextProps.todo.completed
+  );
+};
+
+const memorizedTodoItem = React.memo(TodoItem, areEqual);
+
+export default memorizedTodoItem;
