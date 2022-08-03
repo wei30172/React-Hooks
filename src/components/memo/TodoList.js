@@ -23,17 +23,21 @@ const TodoList = () => {
       .catch((error) => console.log(error));
   };
 
-  const updateTodo = async (todo) => {
+  const updateTodo = async (updatedTodo) => {
+    const { completed } = updatedTodo;
+    
     await todosApi
-      .patch(`/${todo.id}`, todo)
+      .patch(`/${updatedTodo.id}`, updatedTodo)
       .then(() => {
-        const updatedTodos = todos.map((item) => {
-          if (item.id === todo.id) {
-            item = todo;
-          };
-          return item;
+        setTodos((prevTodos) => {
+          let updatedTodos = [...prevTodos].map((todo) => {
+            if (todo.id === updatedTodo.id) {
+              return { ...todo, completed };
+            }
+            return todo;
+          });
+          return updatedTodos;
         });
-        setTodos(updatedTodos);
       })
       .catch((error) => console.log(error));
   };
@@ -41,13 +45,12 @@ const TodoList = () => {
   const deleteTodo = async ({ id }) => {
     await todosApi
       .delete(`/${id}`, id)
-      .then(
-        setTodos(
-          todos.filter((todo) => {
-            return todo.id !== id;
-          }),
-        ),
-      )
+      .then(() => {
+        setTodos((prevTodos) => {
+          let updatedTodos = [...prevTodos].filter((todo) => todo.id !== id);
+          return updatedTodos;
+        });
+      })
       .catch((error) => console.log(error));
   };
 
