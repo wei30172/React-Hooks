@@ -27,13 +27,13 @@ const TodoList = () => {
     await todosApi
       .patch(`/${todo.id}`, todo)
       .then(() => {
-        const updatedUsers = todos.map((item) => {
+        const updatedTodos = todos.map((item) => {
           if (item.id === todo.id) {
             item = todo;
           };
           return item;
         });
-        setTodos(updatedUsers);
+        setTodos(updatedTodos);
       })
       .catch((error) => console.log(error));
   };
